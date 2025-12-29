@@ -3,10 +3,13 @@
 <package format="3">
   <name>my_cpu_monitor</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
+  <description>ROS 2 package to monitor CPU usage</description>
   <maintainer email="reochimaru@gmail.com">leo0607y</maintainer>
   <license>BSD-3-Clause</license>
 
+  <depend>rclpy</depend>
+  <depend>std_msgs</depend>
+  <depend>psutil</depend>
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>
   <test_depend>ament_pep257</test_depend>

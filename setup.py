@@ -1,4 +1,6 @@
-from setuptools import find_packages, setup
+from setuptools import setup
+import os
+from glob import glob
 
 package_name = 'my_cpu_monitor'
 
@@ -10,12 +12,13 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
+        (os.path.join('share', package_name), glob('launch/*.launch.py')),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
     maintainer='leo0607y',
     maintainer_email='reochimaru@gmail.com',
-    description='TODO: Package description',
+    description='robosys2025_2',
     license='BSD-3-Clause',
     extras_require={
         'test': [
@@ -24,6 +27,8 @@ setup(
     },
     entry_points={
         'console_scripts': [
+            'monitor = my_cpu_monitor.monitor_node:main'
+            'listener = my_cpu_monitor.listener_node:main',
         ],
     },
 )
