@@ -1,4 +1,3 @@
-##!/usr/bin/env python
 # SPDX-FileCopyrightText: 2025 Reo Yamaguchi
 # SPDX-License-Identifier: BSD-3-Clause:
 
@@ -38,7 +37,7 @@ else
     exit 1
 fi
 
-# ハッシュゲージ表示
+# ゲージ表示
 grep "\[" /tmp/test.log | grep "#" || (echo "ゲージエラー" && kill $PID && exit 1)
 
 # 正常終了
